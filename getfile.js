@@ -13,11 +13,10 @@ var ifaces = require('os').networkInterfaces();
 let port = 4000 +Math.floor(Math.random()*1000);
 
 program
-    .version('0.0.1')
-    .option('-h, --help', 'show help')
-    .option('-i, --ip', 'IP Address')
+    .version('0.1.1')
+    .option('-i, --ip', 'IP Address //TODO:in developing')
     .option('-p, --port', 'set PORT, set port, default with random port')
-    .option('-z, --gzip', 'set ZIP, download with zipped')
+    .option('-z, --gzip', 'set ZIP, download with zipped //TODO:in developing')
     .option('-u, --upload', 'PUT file NOT GET file, upload not download')
     .parse(process.argv);
 
@@ -50,8 +49,8 @@ if (filename === 1) {
                         server.close();
                         console.log('file download or upload complete, server closed.');
                         process.exit();
-                    })
-                })
+                    });
+                });
                 return;
             }
 
