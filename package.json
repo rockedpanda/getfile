@@ -1,6 +1,6 @@
 {
   "name": "getfile",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "setup a temp http server for upload/download file",
   "main": "getfile.js",
   "bin":"getfile.js",
