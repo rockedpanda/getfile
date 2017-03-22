@@ -13,7 +13,7 @@ var ifaces = require('os').networkInterfaces();
 let port = 4000 +Math.floor(Math.random()*1000);
 
 program
-    .version('0.1.1')
+    .version('0.1.2')
     .option('-i, --ip', 'IP Address //TODO:in developing')
     .option('-p, --port', 'set PORT, set port, default with random port')
     .option('-z, --gzip', 'set ZIP, download with zipped //TODO:in developing')
