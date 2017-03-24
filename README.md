@@ -46,9 +46,9 @@ Server running at http://192.168.1.116:4131/92087
 
 ```
 > getfile xxx.zip
-Server running at http://192.168.1.116:4565/137797
+Server running at http://192.168.1.116:4565/137797/xxxx.zip
 ```
 
 创建一个临时服务,可通过GET方式访问得到对应的文件.
 
-下载举例: wget http://192.168.1.116:4565/137797
+下载举例: wget http://192.168.1.116:4565/137797 或者 http://192.168.1.116:4565/137797/xxxx.zip
