@@ -10,14 +10,15 @@ var fs = require('fs');
 const http = require('http');
 var ifaces = require('os').networkInterfaces();
 
-let port = 4000 +Math.floor(Math.random()*1000);
+let port = 4000 + Math.floor(Math.random()*1000);
 
 program
-    .version('0.1.4')
+    .version('0.1.5')
     .option('-i, --ip', 'IP Address //TODO:in developing')
-    .option('-p, --port', 'set PORT, set port, default with random port')
+    .option('-p, --port <port>', 'set PORT, set port, default with random port')
     .option('-z, --gzip', 'set ZIP, download with zipped //TODO:in developing')
-    .option('-u, --upload', 'PUT file NOT GET file, upload not download')
+    .option('-u, --upload', 'PUT file NOT GET file, upload not download;default is GET')
+    .option('-f, --file <filename>', '*Required!* filename to PUT or GET')
     .parse(process.argv);
 
 if(program.port){
@@ -31,9 +32,9 @@ if(program.port){
 
 //console.dir(program);
 
-let filename = program.args.length;
+let filename = program.file;
 let stream;
-if (filename === 1) {
+if (filename) {
     let randomUrl = ''+Math.floor(Math.random()*999999).toString(10);
     const server = http.createServer((req, res) => {
         console.log(req.url);
@@ -104,5 +105,6 @@ if (filename === 1) {
       });
     });
 }else{
+    console.log('Start a server for download/upload file.')
     program.help();
 }
