@@ -13,16 +13,16 @@ npm install getfile -g
 ## useage
 
 ```
-Usage: getfile [options]                                        
+Usage: getfile [options] <filename>                                
                                                               
 Options:                                                      
                                                               
   -V, --version  output the version number                    
   -h, --help     show help                                    
-  -i, --ip       IP Address                                   
-  -p, --port     set PORT, set port, default with random port 
-  -z, --gzip     set ZIP, download with zipped                
-  -u, --upload   PUT file NOT GET file, upload not download   
+  -i, --ip       IP Address  //TODO:in developing                                 
+  -p, --port <port>  set PORT, set port, default with random port 
+  -z, --gzip     set ZIP, download with zipped  //TODO:in developing              
+  -u, --upload   PUT file NOT GET file, upload not download;default is GET   
 ```
 
 ### 上传文件:
