@@ -13,16 +13,16 @@ var ifaces = require('os').networkInterfaces();
 let port = 4000 + Math.floor(Math.random()*1000);
 
 program
-    .version('0.1.5')
+    .version('0.1.6')
     .usage('[options] <filename>')
-    .option('-i, --ip', 'IP Address //TODO:in developing')
-    .option('-p, --port <port>', 'set PORT, set port, default with random port')
+    .option('-i, --ip [value]', 'IP Address //TODO:in developing')
+    .option('-p, --port <n>', 'set PORT, set port, default with random port', parseInt)
     .option('-z, --gzip', 'set ZIP, download with zipped //TODO:in developing')
     .option('-u, --upload', 'PUT file NOT GET file, upload not download;default is GET')
     .parse(process.argv);
 
 if(program.port){
-    port = parseInt(program.port, 10);
+    port = program.port;
 }
 
 /*if(program.help){
